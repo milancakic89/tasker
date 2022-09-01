@@ -1,0 +1,38 @@
+<app-modal></app-modal>
+<div class="app_root">
+  <nav class="navigation" [class.opened]="isNavOpen" *ngIf="isAuthenticated">
+    <ng-container *ngFor="let nav of navigation">
+      <a *ngIf="nav.items && nav.items.length"
+         class="nav-link"
+         [class.opened]="nav.opened"
+         routerLinkActive="active">
+        <span>{{ nav.label }}</span>
+        <span class="arrow" [class.opened]="nav.opened" (click)="nav.opened = !nav.opened"></span>
+        <div class="nav-inner-links-wrapper" [class.opened]="nav.opened" class="inner-links">
+          <a class="nav-inner-link"
+             [routerLink]="[inner.url]"
+             *ngFor="let inner of nav.items">{{ inner.label }}</a>
+        </div>
+      </a>
+      <a *ngIf="!nav.items?.length"
+         class="nav-link"
+         routerLinkActive="active"
+         [routerLink]="[nav.url]"> <span>{{ nav.label }}</span> </a>
+    </ng-container>
+    <a class="nav-link logout">Logout</a>
+  </nav>
+  <ng-container *ngIf="isAuthenticated">
+    <div class="navigation_burger" [class.opened]="isNavOpen" (click)="isNavOpen = !isNavOpen">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </ng-container>
+  <div class="content" [class.opened]="isNavOpen && isAuthenticated"
+       [class.logged]="isAuthenticated">
+    <div class="header" *ngIf="isAuthenticated">
+         <tasker-header [navOpened]="isNavOpen"></tasker-header>
+    </div>
+    <router-outlet></router-outlet>
+  </div>
+</div>

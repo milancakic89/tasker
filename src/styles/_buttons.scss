@@ -1,0 +1,71 @@
+@import './variables',
+'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css';
+
+
+
+button {
+  border: none;
+  font-size: 18px;
+  border-radius: 4px;
+  padding: 15px;
+  margin-bottom: 10px;
+  background-color: transparent;
+
+  &:hover {
+    opacity: .9;
+    cursor: pointer;
+  }
+
+
+  &.primary {
+    background-color: #03A685;
+    color: #fff;
+  }
+
+  &.secondary {
+    background-color: rgb(31, 121, 246);
+    color: #fff;
+  }
+
+  &.danger {
+    background-color: $color-error;
+    color: #fff;
+  }
+}
+
+a {
+  text-decoration: none;
+
+  &.primary {
+    display: inline-flex;
+    background-color: #03A685;
+    color: #fff;
+    border: none;
+    font-size: 18px;
+    border-radius: 4px;
+    padding: 15px;
+    margin-bottom: 10px;
+  }
+
+  &.secondary {
+    display: inline-flex;
+    background-color: rgb(31, 121, 246);
+    color: #fff;
+    border: none;
+    font-size: 18px;
+    border-radius: 4px;
+    padding: 15px;
+    margin-bottom: 10px;
+  }
+
+  &.danger {
+    display: inline-flex;
+    background-color: $color-error;
+    color: #fff;
+    border: none;
+    font-size: 18px;
+    border-radius: 4px;
+    padding: 15px;
+    margin-bottom: 10px;
+  }
+}

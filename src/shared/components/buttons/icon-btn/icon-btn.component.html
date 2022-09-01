@@ -1,0 +1,6 @@
+<button>
+  <ng-container [ngSwitch]="icon">
+      <i *ngSwitchCase="'edit'" class="fa-solid fa-pen-to-square"></i>
+      <i *ngSwitchCase="'delete'" class="fa-solid fa-trash"></i>
+  </ng-container>
+</button>

@@ -1,0 +1,28 @@
+.login {
+  color: #fff;
+
+  p {
+
+    &:first-child {
+      margin-bottom: 40px;
+    }
+
+  }
+}
+
+h1,
+span,
+p {
+  color: inherit;
+}
+
+
+
+h1 span {
+  font-weight: 400;
+}
+
+
+.link{
+  text-align: center;
+}

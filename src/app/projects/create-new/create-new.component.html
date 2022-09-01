@@ -1,0 +1,15 @@
+
+<heading>
+  <h2 class="heading"><span>{{ isEditMode ? 'Edit' : 'Create new ' }} project</span>
+    <button class="primary">{{ isEditMode ? 'Update' : 'Create' }}</button></h2>
+</heading>
+<form>
+  <label>Name</label>
+  <input name="name" [(ngModel)]="project.name"/>
+
+  <label>Short description</label>
+  <input name="shortDescription" [(ngModel)]="project.short_description"/>
+
+  <label>Long description</label>
+  <textarea name="description" [(ngModel)]="project.description"></textarea>
+</form>

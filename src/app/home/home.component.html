@@ -1,0 +1,22 @@
+<h2 class="heading"><span>Projects</span><a class="primary" routerLink="/projects/new">Create new project</a></h2>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Short description</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let project of user.projects" (click)="openProject(project.id)">
+      <td>{{ project.name }}</td>
+      <td>{{ project.short_description }}</td>
+      <td>
+        <div class="actions">
+          <icon-btn icon="edit" (click)="edit($event, project.id)"></icon-btn>
+          <icon-btn icon="delete" (click)="delete($event, project.id)"></icon-btn>
+        </div>
+      </td>
+    </tr>
+  </tbody>
+</table>
